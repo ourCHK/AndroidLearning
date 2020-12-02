@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ScrollActivity">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.chk.androidlearning.custom.view.CustomScrollTextView
+            android:id="@+id/firstText"
+            android:text="FULL OCCUR"
+            android:gravity="center"
+            android:padding="10sp"
+            android:textSize="20sp"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.chk.androidlearning.custom.view.CustomScrollTextView
+            android:id="@+id/secondText"
+            android:text="FULL OCCUR"
+            android:gravity="center"
+            android:padding="10sp"
+            android:textSize="20sp"
+            android:background="@color/colorAccent"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+
+        <com.chk.androidlearning.custom.view.CustomScrollTextView
+            android:id="@+id/thirdText"
+            android:text="FULL OCCUR"
+            android:gravity="center"
+            android:padding="10sp"
+            android:textSize="20sp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <com.chk.androidlearning.custom.view.CustomScrollViewGroup
+        android:background="@android:color/holo_blue_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:layout_margin="70dp"
+            android:id="@+id/HelloWorld"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="HelloWorldrqHelloWorldrqHelloWorldrqdasddasddasddasddasd"
+            android:maxLines="1"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/HelloWorld2"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="删除"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/HelloWorld3"
+            android:background="@android:color/holo_green_light"
+            android:gravity="center"
+            android:text="制定"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.chk.androidlearning.custom.view.CustomScrollViewGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/recyclerView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_margin="70dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="HelloWorldrqHelloWorldrqHelloWorldrqdasddasddasddasddasd"
+            android:maxLines="1"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="213210"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:text="213210"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <TextView
+        android:id="@+id/fullTextView"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="FulltextView"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.chk.androidlearning.custom.view.TouchEventLearningViewGroupA
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.chk.androidlearning.custom.view.TouchEventLearningViewGroupB
+            android:background="@color/colorPrimary"
+            android:layout_width="300dp"
+            android:layout_height="300dp">
+            <com.chk.androidlearning.custom.view.TouchEventLearningView
+                android:id="@+id/TouchEventLearningView"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="100dp"
+                android:layout_height="100dp">
+
+            </com.chk.androidlearning.custom.view.TouchEventLearningView>
+        </com.chk.androidlearning.custom.view.TouchEventLearningViewGroupB>
+    </com.chk.androidlearning.custom.view.TouchEventLearningViewGroupA>
+</LinearLayout>
