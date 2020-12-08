@@ -1,5 +1,6 @@
 [
   {"Name": "AnimationLearning","ActivityName": "com.chk.androidlearning.ui.AniActivity"},
   {"Name": "ScrollerLearning","ActivityName": "com.chk.androidlearning.ui.ScrollActivity"},
-  {"Name": "LifeCircleLeaning","ActivityName": "com.chk.androidlearning.ui.LifeCircleActivity"}
+  {"Name": "LifeCircleLeaning","ActivityName": "com.chk.androidlearning.ui.LifeCircleActivity"},
+  {"Name": "DataBindingLearning","ActivityName": "com.chk.androidlearning.ui.DataBindingActivity"}
 ]

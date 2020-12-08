@@ -23,6 +23,9 @@ android {
     lintOptions {
         disable 'GoogleAppIndexingWarning'
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

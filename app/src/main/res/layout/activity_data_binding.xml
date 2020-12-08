@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.DataBindingActivity">
+    <data>
+        <import type="java.util.List"/>
+        <variable
+            name="nameList"
+            type="List&lt;String>" />
+        <variable
+            name="dataList"
+            type="List&lt;String>" />
+        <variable
+            name="bindUser"
+            type="com.chk.androidlearning.bean.User"/>
+        <variable
+            name="buttonClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="eventHandler"
+            type="com.chk.androidlearning.handler.EventHandler" />
+        <variable
+            name="oneWayData"
+            type="com.chk.androidlearning.bean.OneWayData" />
+        <variable
+            name="oneWayDataChange"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="twoWayData"
+            type="com.chk.androidlearning.bean.TwoWayData" />
+        <variable
+            name="oneWayDataField"
+            type="com.chk.androidlearning.bean.OneWayDataField" />
+        <variable
+            name="oneWayDataFieldListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{bindUser.name}"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{buttonClick}"
+            android:text="@{bindUser.name}"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{eventHandler::clickButton}"
+            android:text="@{String.valueOf(bindUser.age)}"/>
+        <Button
+            android:id="@+id/addDataButton"
+            android:text="add Data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{eventHandler::addData}"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dataRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@{oneWayData.data}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:text="点击改变上面textView的文字"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{oneWayDataChange}"/>
+            <TextView
+                android:text="@{oneWayDataField.name}"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:text="点击改变上面textView的文字"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{oneWayDataFieldListener}"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

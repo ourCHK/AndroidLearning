@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="clickListener"
+            type="com.chk.androidlearning.listener.UserBindingClickListener" />
+        <variable
+            name="user"
+            type="com.chk.androidlearning.bean.DataBindUser" />
+    </data>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->clickListener.click(user)}">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="@{user.name+' '+user.index}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.age)}"/>
+    </LinearLayout>
+</layout>
