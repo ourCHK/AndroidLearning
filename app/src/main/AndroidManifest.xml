@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DataBindingActivity"></activity>
+        <activity android:name=".ui.TwoWayAndAdapterBindingActivity"></activity>
+        <activity android:name=".ui.DataBindingActivity" />
         <activity android:name=".ui.LifeCircleActivity" />
         <activity android:name=".ui.AniActivity" />
-        <activity android:name=".ui.ScrollActivity"></activity>
+        <activity android:name=".ui.ScrollActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
