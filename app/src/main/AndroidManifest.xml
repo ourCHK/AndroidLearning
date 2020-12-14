@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.TwoWayAndAdapterBindingActivity"></activity>
+        <activity android:name=".ui.NavigationLearningActivity"></activity>
+        <activity android:name=".ui.TwoWayAndAdapterBindingActivity" />
         <activity android:name=".ui.DataBindingActivity" />
         <activity android:name=".ui.LifeCircleActivity" />
         <activity android:name=".ui.AniActivity" />
