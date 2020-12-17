@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BlankFragment">
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:text="MainFragment!" />
     <Button
-        android:id="@+id/openFragmentA"
-        android:text="打开FragmentA"
+        android:id="@+id/openProfileFragment"
+        android:text="打开Profile Fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button

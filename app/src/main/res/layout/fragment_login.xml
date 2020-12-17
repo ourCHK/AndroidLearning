@@ -6,19 +6,20 @@
 
     </data>
     <LinearLayout
-        android:orientation="vertical"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent">
-        <Button
-            android:id="@+id/openFragmentC"
-            android:text="打开FragmentC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
         <TextView
             android:textSize="20sp"
             android:textColor="@color/design_default_color_background"
-            android:text="This is the Fragment A"
+            android:text="This is the login fragment!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/login"
+            android:text="Login"
+            android:textColor="@color/design_default_color_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
