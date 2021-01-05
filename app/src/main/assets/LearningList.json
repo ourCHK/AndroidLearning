@@ -6,6 +6,7 @@
   {"Name": "适配器和双向绑定","ActivityName": "com.chk.androidlearning.ui.TwoWayAndAdapterBindingActivity"},
   {"Name": "ViewModelAndLiveDataLearning","ActivityName": "com.chk.androidlearning.ui.ViewModelAndLiveDataActivity"},
   {"Name": "NavigationLearning","ActivityName": "com.chk.androidlearning.ui.NavigationLearningActivity"},
-  {"Name": "HiltLearning","ActivityName": "com.chk.androidlearning.ui.HiltActivity"}
+  {"Name": "HiltLearning","ActivityName": "com.chk.androidlearning.ui.HiltActivity"},
+  {"Name": "ExoPlayerLearning","ActivityName": "com.chk.androidlearning.ui.ExoPlayerActivity"}
 
 ]
