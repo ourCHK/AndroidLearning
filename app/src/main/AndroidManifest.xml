@@ -14,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.CustomBannerActivity"></activity>
+        <activity android:name=".ui.PagingActivity"></activity>
+        <activity android:name=".ui.CustomBannerActivity" />
         <activity
             android:name=".ui.ExoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name=".ui.HiltActivity" />
         <activity android:name=".ui.ViewModelAndLiveDataActivity" />
         <activity android:name=".ui.NavigationLearningActivity" />
