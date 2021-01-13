@@ -60,7 +60,7 @@ public class PagingActivity extends AppCompatActivity {
         binding.loadData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                genDataSource();
+                invalidUserSource();
                 Toast.makeText(PagingActivity.this, "click!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -75,6 +75,7 @@ public class PagingActivity extends AppCompatActivity {
     }
 
     void invalidUserSource() {
+        Log.i(TAG,"invalidate");
         dataSource.invalidate();
     }
 }

@@ -70,8 +70,9 @@ dependencies {
 
 //    def paging_version = "3.0.0-alpha11"
 
-//    implementation "androidx.paging:paging-runtime:3.0.0-alpha11"
-//    implementation 'androidx.paging:paging-guava:3.0.0-alpha11'
+    implementation "androidx.paging:paging-runtime:3.0.0-alpha11"
+    implementation 'androidx.paging:paging-guava:3.0.0-alpha11'
+    implementation "androidx.paging:paging-rxjava3:3.0.0-alpha11"
 //    implementation 'com.google.guava:guava:jar:30.1-android'
 
 }

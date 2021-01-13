@@ -9,6 +9,7 @@
   {"Name": "HiltLearning","ActivityName": "com.chk.androidlearning.ui.HiltActivity"},
   {"Name": "ExoPlayerLearning","ActivityName": "com.chk.androidlearning.ui.ExoPlayerActivity"},
   {"Name": "CustomBanner","ActivityName": "com.chk.androidlearning.ui.CustomBannerActivity"},
-  {"Name": "PagingLearning","ActivityName": "com.chk.androidlearning.ui.PagingActivity"}
+  {"Name": "Paging2Learning","ActivityName": "com.chk.androidlearning.ui.PagingActivity"},
+  {"Name": "Paging3Learning","ActivityName": "com.chk.androidlearning.ui.Paging3Activity"}
 
 ]

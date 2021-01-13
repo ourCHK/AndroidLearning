@@ -30,6 +30,11 @@ public class UserDataSource extends PageKeyedDataSource<Integer, User> {
         for (int i=0; i<3; i++) {
             userList.add(new User("CHK",i));
         }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         callback.onResult(userList,0,1);
     }
 
