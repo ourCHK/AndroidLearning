@@ -26,7 +26,7 @@ import androidx.paging.ListenableFuturePagingSource;
  */
 public class UserPagingSource extends ListenableFuturePagingSource<Integer, User> {
 
-    private final static String TAG = UserPagingSource.class.getSimpleName();
+    private final static String TAG = UserPagingSource.class.getSimpleName()+ "Paging";
 
     Executor mBgExecutor;
 
@@ -37,6 +37,7 @@ public class UserPagingSource extends ListenableFuturePagingSource<Integer, User
     @NotNull
     @Override
     public ListenableFuture<LoadResult<Integer, User>> loadFuture(@NotNull LoadParams<Integer> loadParams) {
+        int page = loadParams.getKey() != null ? loadParams.getKey() : 1;
         Log.i(TAG,"loadFuture");
         ListenableFuture<User> userFuture = new ListenableFuture<User>() {
             @Override
@@ -81,8 +82,7 @@ public class UserPagingSource extends ListenableFuturePagingSource<Integer, User
                 for (int i=0; i<3; i++) {
                     userList.add(new User("CHK"+i,18));
                 }
-                return new LoadResult.Page<>(userList,null,2,LoadResult.Page.COUNT_UNDEFINED,
-                        LoadResult.Page.COUNT_UNDEFINED);
+                return toLoadResult(userList,page);
             }
         }, mBgExecutor);
         ListenableFuture<LoadResult<Integer, User>> partialLoadResultFuture = Futures.catching(
@@ -91,6 +91,10 @@ public class UserPagingSource extends ListenableFuturePagingSource<Integer, User
 
         return Futures.catching(partialLoadResultFuture,
                 IOException.class, LoadResult.Error::new, mBgExecutor);
+    }
+
+    private LoadResult<Integer, User> toLoadResult(List<User> userList, int page) {
+        return new LoadResult.Page(userList, page == 1 ? null : page - 1, page + 1);
     }
 
 }

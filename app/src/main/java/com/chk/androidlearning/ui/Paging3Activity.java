@@ -55,31 +55,51 @@ public class Paging3Activity extends AppCompatActivity {
 //        dataInit();
 //        viewInit();
         usingRxPaging();
+//        usingLivePaging();
+    }
+
+    void usingLivePaging() {
+        adapter = new UserPaging3Adapter();
+        Paging3ViewModel viewModel = new ViewModelProvider(this)
+                .get(Paging3ViewModel.class);
+//        viewModel.pagingDataFlow.subscribe(userPagingData -> {
+//            adapter.submitData(getLifecycle(),userPagingData);
+//        });
+        viewModel.pagingDataLiveData.observe(this, new Observer<PagingData<User>>() {
+            @Override
+            public void onChanged(PagingData<User> userPagingData) {
+                adapter.submitData(getLifecycle(),userPagingData);
+            }
+        });
+
+        userRv = binding.pagingRv;
+        userRv.setLayoutManager(new LinearLayoutManager(this));
+        userRv.setAdapter(adapter);
     }
 
     void dataInit() {
         adapter = new UserPaging3Adapter();
-        source = new UserPagingSource();
-        pager = new Pager<>(new PagingConfig(10), new Function0<PagingSource<Integer, User>>() {
-            @Override
-            public PagingSource<Integer, User> invoke() {
-                Log.i(TAG,"create source");
-                return source;
-            }
-        });
-
-        ViewModelAndLiveDataViewModel viewModel = new ViewModelProvider(this)
-                .get(ViewModelAndLiveDataViewModel.class);
-        CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(viewModel);
-
-        PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager),viewModelScope)
-                .observe(this, new Observer<PagingData<User>>() {
-                    @Override
-                    public void onChanged(PagingData<User> userPagingData) {
-                        Log.i(TAG,"change data!");
-                        adapter.submitData(getLifecycle(),userPagingData);
-                    }
-                });
+//        source = new UserPagingSource();
+//        pager = new Pager<>(new PagingConfig(10), new Function0<PagingSource<Integer, User>>() {
+//            @Override
+//            public PagingSource<Integer, User> invoke() {
+//                Log.i(TAG,"create source");
+//                return source;
+//            }
+//        });
+//
+//        ViewModelAndLiveDataViewModel viewModel = new ViewModelProvider(this)
+//                .get(ViewModelAndLiveDataViewModel.class);
+//        CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(viewModel);
+//
+//        PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager),viewModelScope)
+//                .observe(this, new Observer<PagingData<User>>() {
+//                    @Override
+//                    public void onChanged(PagingData<User> userPagingData) {
+//                        Log.i(TAG,"change data!");
+//                        adapter.submitData(getLifecycle(),userPagingData);
+//                    }
+//                });
 
 //        PagingLiveData.getLiveData(pager).observe(this, new Observer<PagingData<User>>() {
 //            @Override
