@@ -38,10 +38,12 @@ public class UserPagingRxSource extends RxPagingSource<Integer, User> {
     public Single<LoadResult<Integer, User>> loadSingle(@NotNull LoadParams<Integer> loadParams) {
         int page = loadParams.getKey() != null ? loadParams.getKey() : 1;
         return Single.just(1)
-//                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io())
+//                .observeOn()
                 .map(new Function<Integer, LoadResult<Integer,User>>() {
                     @Override
                     public LoadResult<Integer, User> apply(Integer integer) throws Throwable {
+                        Thread.sleep(3000);
                         Log.i(TAG,"LoadResult");
                         List<User> userList = new ArrayList<>();
                         for (int i=0; i<3; i++) {

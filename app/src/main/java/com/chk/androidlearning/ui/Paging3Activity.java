@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.chk.androidlearning.R;
+import com.chk.androidlearning.adapter.PagingLoadAdapter;
 import com.chk.androidlearning.adapter.UserPaging3Adapter;
 import com.chk.androidlearning.bean.User;
 import com.chk.androidlearning.databinding.ActivityPaging3Binding;
@@ -19,6 +20,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelKt;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.paging.LoadState;
+import androidx.paging.LoadStates;
 import androidx.paging.Pager;
 import androidx.paging.PagingConfig;
 import androidx.paging.PagingData;
@@ -29,6 +32,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.functions.Consumer;
+import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function0;
@@ -130,19 +134,17 @@ public class Paging3Activity extends AppCompatActivity {
 
     void usingRxPaging() {
         adapter = new UserPaging3Adapter();
-//        source = new UserPagingSource();
-//        pager = new Pager<>(new PagingConfig(10), new Function0<PagingSource<Integer, User>>() {
-//            @Override
-//            public PagingSource<Integer, User> invoke() {
-//                Log.i(TAG,"create source");
-//                return source;
+//        adapter.addLoadStateListener(loadStates -> {
+//            Log.i(TAG,"load State");
+//            if (loadStates.getRefresh() instanceof LoadState.Loading) {
+//                Log.i(TAG,"load loading");
+//            } else if (loadStates.getRefresh() instanceof LoadState.Error) {
+//                Log.i(TAG,"load error");
+//            } else {
+//                Log.i(TAG,"load other state");
 //            }
+//            return Unit.INSTANCE;
 //        });
-
-
-//        UserPagingRxSource source = new UserPagingRxSource();
-//        Pager<Integer,User> pager = new Pager<>(new PagingConfig(20,20,false,20,100),()->source);
-//        pagingDataFlowable = PagingRx.getFlowable(pager);
         Paging3ViewModel viewModel = new ViewModelProvider(this)
                 .get(Paging3ViewModel.class);
         viewModel.pagingDataFlow.subscribe(userPagingData -> {
@@ -151,17 +153,7 @@ public class Paging3Activity extends AppCompatActivity {
 
         userRv = binding.pagingRv;
         userRv.setLayoutManager(new LinearLayoutManager(this));
-        userRv.setAdapter(adapter);
-
-//        CoroutineScope coroutineScope = ViewModelKt.getViewModelScope(viewModel);
-//        PagingRx.cachedIn(pagingDataFlowable, coroutineScope);
-//        pagingDataFlowable.subscribe(new Consumer<PagingData<User>>() {
-//            @Override
-//            public void accept(PagingData<User> userPagingData) throws Throwable {
-//                Log.i(TAG,"go accept");
-//                adapter.submitData(getLifecycle(),userPagingData);
-//            }
-//        });
+        userRv.setAdapter(adapter.withLoadStateFooter(new PagingLoadAdapter()));
     }
 
 }
