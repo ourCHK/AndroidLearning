@@ -10,6 +10,7 @@
   {"Name": "ExoPlayerLearning","ActivityName": "com.chk.androidlearning.ui.ExoPlayerActivity"},
   {"Name": "CustomBanner","ActivityName": "com.chk.androidlearning.ui.CustomBannerActivity"},
   {"Name": "Paging2Learning","ActivityName": "com.chk.androidlearning.ui.PagingActivity"},
-  {"Name": "Paging3Learning","ActivityName": "com.chk.androidlearning.ui.Paging3Activity"}
+  {"Name": "Paging3Learning","ActivityName": "com.chk.androidlearning.ui.Paging3Activity"},
+  {"Name": "WaterFallLayout","ActivityName": "com.chk.androidlearning.ui.StaggeredGridLayoutActivity"}
 
 ]
