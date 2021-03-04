@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.StaggeredGridLayoutActivity"></activity>
+        <activity android:name=".ui.RecyclerViewLearningActivity"></activity>
+        <activity android:name=".ui.StaggeredGridLayoutActivity" />
         <activity android:name=".ui.Paging3Activity" />
         <activity android:name=".ui.PagingActivity" />
         <activity android:name=".ui.CustomBannerActivity" />
