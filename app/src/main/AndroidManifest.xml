@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.HandlerLearningActivity"></activity>
+        <activity android:name=".ui.ThreadLearningActivity"></activity>
+        <activity android:name=".ui.HandlerLearningActivity" />
         <activity android:name=".ui.ClassLoaderLearningActivity" />
         <activity android:name=".ui.RecyclerViewLearningActivity" />
         <activity android:name=".ui.StaggeredGridLayoutActivity" />
