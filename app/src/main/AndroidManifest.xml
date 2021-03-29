@@ -15,7 +15,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ThreadLearningActivity"></activity>
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=".remote">
+            <intent-filter>
+                <action android:name="com.chk.androidlearning.MessengerService"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.FirstService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.ServiceLearningActivity" />
+        <activity
+            android:name=".ui.Service2Activity"
+            android:launchMode="singleTop" />
+        <activity android:name=".ui.ThreadLearningActivity" />
         <activity android:name=".ui.HandlerLearningActivity" />
         <activity android:name=".ui.ClassLoaderLearningActivity" />
         <activity android:name=".ui.RecyclerViewLearningActivity" />
