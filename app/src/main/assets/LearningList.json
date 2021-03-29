@@ -1,4 +1,5 @@
 [
+  {"Name": "AsyncTaskActivity","ActivityName": "com.chk.androidlearning.ui.AsyncTaskActivity"},
   {"Name": "ServiceLearningActivity","ActivityName": "com.chk.androidlearning.ui.ServiceLearningActivity"},
   {"Name": "ThreadLearning","ActivityName": "com.chk.androidlearning.ui.ThreadLearningActivity"},
   {"Name": "HandlerLearning","ActivityName": "com.chk.androidlearning.ui.HandlerLearningActivity"},
