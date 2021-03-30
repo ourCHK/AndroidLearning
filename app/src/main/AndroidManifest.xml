@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.AsyncTaskActivity"></activity>
+        <activity android:name=".ui.FragmentLifeCircleLearningActivity"></activity>
+        <activity android:name=".ui.AsyncTaskActivity" />
 
         <service
             android:name=".service.MessengerService"
