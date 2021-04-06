@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.MessageQueue;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -24,6 +25,16 @@ public class HandlerLearningActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler_learning);
+        MessageQueue q;
+        Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                Toast.makeText(HandlerLearningActivity.this, "idle", Toast.LENGTH_SHORT).show();
+                Log.i(TAG,"idle handler");
+                return true;
+            }
+        });
+//        Looper.myQueue().removeIdleHandler(); //防止内存泄露风险
 
 //        handler =  new Handler() {
 //            @Override
@@ -36,7 +47,6 @@ public class HandlerLearningActivity extends AppCompatActivity {
 
         MyHandler myHandler = new MyHandler(this);
         myHandler.sendEmptyMessageDelayed(0,2 * 1000 * 60);
-
         LooperThread thread = new LooperThread();
         thread.start();
         myHandler.postDelayed(new Runnable() {
