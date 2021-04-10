@@ -1,4 +1,5 @@
 [
+  {"Name": "AidlLearningActivity","ActivityName": "com.chk.androidlearning.ui.AidlLearningActivity"},
   {"Name": "EventLearningActivity","ActivityName": "com.chk.androidlearning.ui.EventLearningActivity"},
   {"Name": "LayoutOpmActivity","ActivityName": "com.chk.androidlearning.ui.LayoutOpmActivity"},
   {"Name": "FragmentLifeCircleLearningActivity","ActivityName": "com.chk.androidlearning.ui.FragmentLifeCircleLearningActivity"},

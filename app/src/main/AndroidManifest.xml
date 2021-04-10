@@ -15,7 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.EventLearningActivity"></activity>
+        <service
+            android:name=".service.BookService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.chk.androidlearning.BookService"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.AidlTestService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.chk.androidlearning.AIDL_TEST_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ui.AidlLearningActivity" />
+        <activity android:name=".ui.EventLearningActivity" />
         <activity android:name=".ui.LayoutOpmActivity" />
         <activity android:name=".ui.FragmentLifeCircleLearningActivity" />
         <activity android:name=".ui.AsyncTaskActivity" />
